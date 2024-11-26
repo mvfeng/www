@@ -696,6 +696,54 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      常见问题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常见问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ens3f1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 错误：未知的连接 "ens3f1"
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 错误：未知的连接 "ens3f1"">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 检查网络接口名称
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 创建新的连接配置
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -849,6 +897,54 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      常见问题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常见问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ens3f1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 错误：未知的连接 "ens3f1"
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 错误：未知的连接 "ens3f1"">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 检查网络接口名称
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 创建新的连接配置
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -931,6 +1027,23 @@
 </span></code></pre></div></td></tr></table></div>
 <h3 id="_1">总结<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>通过 <code>nmcli</code> 工具，你可以方便地配置和管理网络连接的 IP 地址、网关、DNS 等信息。无论是静态 IP 还是动态 IP，都可以通过简单的命令行操作来完成。</p>
+<h3 id="_2">常见问题<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h4 id="1-ens3f1">1. 错误：未知的连接 "ens3f1"<a class="headerlink" href="#1-ens3f1" title="Permanent link">&para;</a></h4>
+<p>在使用 nmcli 命令时，如果出现“未知的连接 'ens3f1'”错误，通常是因为系统中没有名为 ens3f1 的网络连接配置。以下是一些可能的解决方案：</p>
+<h5 id="1_1">1. 检查网络接口名称<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h5>
+<p>首先，确认你的网络接口名称是否正确。你可以使用以下命令列出所有可用的网络接口：</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1">nmcli<span class="w"> </span>device<span class="w"> </span>status
+</span></code></pre></div></td></tr></table></div>
+<p>或者使用 <code>ip</code> 命令：</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1">ip<span class="w"> </span>link<span class="w"> </span>show
+</span></code></pre></div></td></tr></table></div>
+<h5 id="2">2. 创建新的连接配置<a class="headerlink" href="#2" title="Permanent link">&para;</a></h5>
+<p>如果 <code>ens3f1</code> 是一个新的网络接口，你可能需要先创建一个新的连接配置。你可以使用以下命令创建一个新的连接配置：</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1">nmcli<span class="w"> </span>connection<span class="w"> </span>add<span class="w"> </span><span class="nb">type</span><span class="w"> </span>ethernet<span class="w"> </span>ifname<span class="w"> </span>ens3f1<span class="w"> </span>con-name<span class="w"> </span>ens3f1
+</span></code></pre></div></td></tr></table></div>
+<p>然后，你可以再次尝试修改 IP 地址：</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1">nmcli<span class="w"> </span>connection<span class="w"> </span>modify<span class="w"> </span>ens3f1<span class="w"> </span>ipv4.addresses<span class="w"> </span><span class="m">192</span>.168.1.22/24
+</span></code></pre></div></td></tr></table></div>
 
 
 
