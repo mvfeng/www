@@ -810,6 +810,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      查看结果
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1017,6 +1026,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      查看结果
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1123,9 +1141,105 @@
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1">iperf3<span class="w"> </span>-s<span class="w"> </span>-B<span class="w"> </span><span class="m">192</span>.168.1.100<span class="w"> </span>-p<span class="w"> </span><span class="m">5202</span>
 </span></code></pre></div></td></tr></table></div>
 <h4 id="b">在设备B上启动客户端：<a class="headerlink" href="#b" title="Permanent link">&para;</a></h4>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1">iperf3<span class="w"> </span>-c<span class="w"> </span><span class="m">192</span>.168.1.100<span class="w"> </span>-p<span class="w"> </span><span class="m">5202</span><span class="w"> </span>-t<span class="w"> </span><span class="m">60</span><span class="w"> </span>-b<span class="w"> </span>100M
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1">iperf3<span class="w"> </span>-c<span class="w"> </span><span class="m">192</span>.168.1.100<span class="w"> </span>-p<span class="w"> </span><span class="m">5202</span><span class="w"> </span>-t<span class="w"> </span><span class="m">60</span>
 </span></code></pre></div></td></tr></table></div>
 <p>通过以上步骤，你可以在两台设备之间进行对打流测试，并自定义IP地址和端口，评估网络性能。</p>
+<h4 id="_2">查看结果<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1">[root@localhost ~]# iperf3 -s -B 192.168.1.170 -p 5202
+</span><span id="__span-13-2">-----------------------------------------------------------
+</span><span id="__span-13-3">Server listening on 5202 (test #1)
+</span><span id="__span-13-4">-----------------------------------------------------------
+</span><span id="__span-13-5">Accepted connection from 192.168.1.22, port 40372
+</span><span id="__span-13-6">[  5] local 192.168.1.170 port 5202 connected to 192.168.1.22 port 40384
+</span><span id="__span-13-7">[ ID] Interval           Transfer     Bitrate
+</span><span id="__span-13-8">[  5]   0.00-1.00   sec   112 MBytes   941 Mbits/sec
+</span><span id="__span-13-9">[  5]   1.00-2.00   sec   112 MBytes   942 Mbits/sec
+</span><span id="__span-13-10">[  5]   2.00-3.00   sec   112 MBytes   942 Mbits/sec
+</span><span id="__span-13-11">[  5]   3.00-4.00   sec   112 MBytes   942 Mbits/sec
+</span><span id="__span-13-12">[  5]   4.00-5.00   sec   112 MBytes   941 Mbits/sec
+</span><span id="__span-13-13">[  5]   5.00-6.00   sec   112 MBytes   942 Mbits/sec
+</span><span id="__span-13-14">[  5]   6.00-7.00   sec   112 MBytes   942 Mbits/sec
+</span><span id="__span-13-15">[  5]   7.00-8.00   sec   112 MBytes   942 Mbits/sec
+</span><span id="__span-13-16">[  5]   8.00-9.00   sec   112 MBytes   942 Mbits/sec
+</span><span id="__span-13-17">[  5]   9.00-10.00  sec   112 MBytes   941 Mbits/sec
+</span><span id="__span-13-18">- - - - - - - - - - - - - - - - - - - - - - - - -
+</span><span id="__span-13-19">[ ID] Interval           Transfer     Bitrate
+</span><span id="__span-13-20">[  5]   0.00-10.00  sec  1.10 GBytes   941 Mbits/sec                  receiver
+</span></code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1">[root@localhost ~]# ethtool  enp135s0f1
+</span><span id="__span-14-2">Settings for enp135s0f1:
+</span><span id="__span-14-3">        Supported ports: [ TP ]
+</span><span id="__span-14-4">        Supported link modes:   10baseT/Half 10baseT/Full
+</span><span id="__span-14-5">                                100baseT/Half 100baseT/Full
+</span><span id="__span-14-6">                                1000baseT/Full
+</span><span id="__span-14-7">        Supported pause frame use: Symmetric
+</span><span id="__span-14-8">        Supports auto-negotiation: Yes
+</span><span id="__span-14-9">        Supported FEC modes: Not reported
+</span><span id="__span-14-10">        Advertised link modes:  10baseT/Half 10baseT/Full
+</span><span id="__span-14-11">                                100baseT/Half 100baseT/Full
+</span><span id="__span-14-12">                                1000baseT/Full
+</span><span id="__span-14-13">        Advertised pause frame use: Symmetric
+</span><span id="__span-14-14">        Advertised auto-negotiation: Yes
+</span><span id="__span-14-15">        Advertised FEC modes: Not reported
+</span><span id="__span-14-16">        Speed: 1000Mb/s
+</span><span id="__span-14-17">        Duplex: Full
+</span><span id="__span-14-18">        Port: Twisted Pair
+</span><span id="__span-14-19">        PHYAD: 1
+</span><span id="__span-14-20">        Transceiver: internal
+</span><span id="__span-14-21">        Auto-negotiation: on
+</span><span id="__span-14-22">        MDI-X: off (auto)
+</span><span id="__span-14-23">        Supports Wake-on: pumbg
+</span><span id="__span-14-24">        Wake-on: g
+</span><span id="__span-14-25">        Current message level: 0x00000007 (7)
+</span><span id="__span-14-26">                               drv probe link
+</span><span id="__span-14-27">        Link detected: yes
+</span></code></pre></div></td></tr></table></div>
+<p>结果显示：打流平均速率<strong>941 Mbits/sec</strong>和网卡<strong>Speed: 1000Mb/s</strong>相近，符合</p>
 
 
 
