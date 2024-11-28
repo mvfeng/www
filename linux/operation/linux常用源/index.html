@@ -753,8 +753,9 @@
 
 <details class="debian 阿里源">
 <summary>Debian</summary>
-<p>备份 /etc/apt/sources.list文件 (需要使用sudo), 然后在/etc/apt/sources.list 添加以下条目</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">阿里源</label><label for="__tabbed_1_2">清华源</label></div>
+<p>备份 /etc/apt/sources.list文件 (需要使用sudo), 然后在/etc/apt/sources.list 添加以下条目
+参考：https://developer.aliyun.com/mirror/debian</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">debian 11.x (bullseye)</label><label for="__tabbed_1_2">debian 10.x (buster)</label><label for="__tabbed_1_3">debian 9.x (stretch)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-markdown highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Markdown</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -777,9 +778,33 @@
 <div class="tabbed-block">
 <div class="language-markdown highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Markdown</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="k">1.</span> Sed sagittis eleifend rutrum
-</span><span id="__span-1-2"><span class="k">2.</span> Donec vitae suscipit est
-</span><span id="__span-1-3"><span class="k">3.</span> Nulla tempor lobortis orci
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1">deb https://mirrors.aliyun.com/debian/ buster main non-free contrib
+</span><span id="__span-1-2">deb-src https://mirrors.aliyun.com/debian/ buster main non-free contrib
+</span><span id="__span-1-3">deb https://mirrors.aliyun.com/debian-security buster/updates main
+</span><span id="__span-1-4">deb-src https://mirrors.aliyun.com/debian-security buster/updates main
+</span><span id="__span-1-5">deb https://mirrors.aliyun.com/debian/ buster-updates main non-free contrib
+</span><span id="__span-1-6">deb-src https://mirrors.aliyun.com/debian/ buster-updates main non-free contrib
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-markdown highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Markdown</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1">deb https://mirrors.aliyun.com/debian-archive/debian stretch main contrib non-free
+</span><span id="__span-2-2"><span class="gh">#deb https://mirrors.aliyun.com/debian-archive/debian stretch-proposed-updates main non-free contrib</span>
+</span><span id="__span-2-3"><span class="gh">#deb https://mirrors.aliyun.com/debian-archive/debian stretch-backports main non-free contrib</span>
+</span><span id="__span-2-4">deb https://mirrors.aliyun.com/debian-archive/debian-security stretch/updates main contrib non-free
+</span><span id="__span-2-5">deb-src https://mirrors.aliyun.com/debian-archive/debian stretch main contrib non-free
+</span><span id="__span-2-6"><span class="gh">#deb-src https://mirrors.aliyun.com/debian-archive/debian stretch-proposed-updates main contrib non-free</span>
+</span><span id="__span-2-7"><span class="gh">#deb-src https://mirrors.aliyun.com/debian-archive/debian stretch-backports main contrib non-free</span>
+</span><span id="__span-2-8">deb-src https://mirrors.aliyun.com/debian-archive/debian-security stretch/updates main contrib non-free
 </span></code></pre></div></td></tr></table></div>
 </div>
 </div>
