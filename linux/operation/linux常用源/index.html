@@ -759,6 +759,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Redhat系列">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#redhat_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redhat
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -848,6 +863,21 @@
       Redhat系列
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Redhat系列">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#redhat_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redhat
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -969,6 +999,33 @@
 <h2 id="redhat">Redhat系列<a class="headerlink" href="#redhat" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
 <p>RedHat、CentOS、openEuler、AnolisOS、Rocky、OpenCloudOS、Enterprise、AlmaLinux、Fedora</p>
+</div>
+<h3 id="redhat_1">Redhat<a class="headerlink" href="#redhat_1" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">阿里源</p>
+<p>先备份 /etc/apt/sources.list文件 (需要使用sudo), 然后在/etc/apt/sources.list 添加以下条目</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">debian 11.x (bullseye)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-markdown highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Markdown</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1">deb https://mirrors.aliyun.com/debian/ bullseye main non-free contrib
+</span><span id="__span-4-2">deb-src https://mirrors.aliyun.com/debian/ bullseye main non-free contrib
+</span><span id="__span-4-3">deb https://mirrors.aliyun.com/debian-security/ bullseye-security main
+</span><span id="__span-4-4">deb-src https://mirrors.aliyun.com/debian-security/ bullseye-security main
+</span><span id="__span-4-5">deb https://mirrors.aliyun.com/debian/ bullseye-updates main non-free contrib
+</span><span id="__span-4-6">deb-src https://mirrors.aliyun.com/debian/ bullseye-updates main non-free contrib
+</span><span id="__span-4-7">deb https://mirrors.aliyun.com/debian/ bullseye-backports main non-free contrib
+</span><span id="__span-4-8">deb-src https://mirrors.aliyun.com/debian/ bullseye-backports main non-free contrib
+</span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 </div>
 
 
