@@ -722,9 +722,33 @@
         <li class="md-nav__item">
   <a href="#debian" class="md-nav__link">
     <span class="md-ellipsis">
+      Debian系列
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Debian系列">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#debian_1" class="md-nav__link">
+    <span class="md-ellipsis">
       Debian
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ubuntu
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -779,9 +803,33 @@
         <li class="md-nav__item">
   <a href="#debian" class="md-nav__link">
     <span class="md-ellipsis">
+      Debian系列
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Debian系列">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#debian_1" class="md-nav__link">
+    <span class="md-ellipsis">
       Debian
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ubuntu
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -810,7 +858,11 @@
 
   <h1>Linux常用源</h1>
 
-<h3 id="debian">Debian<a class="headerlink" href="#debian" title="Permanent link">&para;</a></h3>
+<h2 id="debian">Debian系列<a class="headerlink" href="#debian" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Debian   Ubuntu   Kali   Linux Mint   Deepin   Zorin OS   Armbian   Proxmox</p>
+</blockquote>
+<h3 id="debian_1">Debian<a class="headerlink" href="#debian_1" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">阿里源</p>
 <p>先备份 /etc/apt/sources.list文件 (需要使用sudo), 然后在/etc/apt/sources.list 添加以下条目</p>
@@ -864,6 +916,33 @@
 </span><span id="__span-2-6"><span class="gh">#deb-src https://mirrors.aliyun.com/debian-archive/debian stretch-proposed-updates main contrib non-free</span>
 </span><span id="__span-2-7"><span class="gh">#deb-src https://mirrors.aliyun.com/debian-archive/debian stretch-backports main contrib non-free</span>
 </span><span id="__span-2-8">deb-src https://mirrors.aliyun.com/debian-archive/debian-security stretch/updates main contrib non-free
+</span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</div>
+<h3 id="ubuntu">Ubuntu<a class="headerlink" href="#ubuntu" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">阿里源</p>
+<p>先备份 /etc/apt/sources.list文件 (需要使用sudo), 然后在/etc/apt/sources.list 添加以下条目</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">debian 11.x (bullseye)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-markdown highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Markdown</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1">deb https://mirrors.aliyun.com/debian/ bullseye main non-free contrib
+</span><span id="__span-3-2">deb-src https://mirrors.aliyun.com/debian/ bullseye main non-free contrib
+</span><span id="__span-3-3">deb https://mirrors.aliyun.com/debian-security/ bullseye-security main
+</span><span id="__span-3-4">deb-src https://mirrors.aliyun.com/debian-security/ bullseye-security main
+</span><span id="__span-3-5">deb https://mirrors.aliyun.com/debian/ bullseye-updates main non-free contrib
+</span><span id="__span-3-6">deb-src https://mirrors.aliyun.com/debian/ bullseye-updates main non-free contrib
+</span><span id="__span-3-7">deb https://mirrors.aliyun.com/debian/ bullseye-backports main non-free contrib
+</span><span id="__span-3-8">deb-src https://mirrors.aliyun.com/debian/ bullseye-backports main non-free contrib
 </span></code></pre></div></td></tr></table></div>
 </div>
 </div>
