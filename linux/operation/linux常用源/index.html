@@ -771,6 +771,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#centos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Centos
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -871,6 +880,15 @@
   <a href="#redhat_1" class="md-nav__link">
     <span class="md-ellipsis">
       Redhat
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#centos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Centos
     </span>
   </a>
   
@@ -1007,21 +1025,130 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">debian 11.x (bullseye)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-markdown highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Markdown</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1">deb https://mirrors.aliyun.com/debian/ bullseye main non-free contrib
-</span><span id="__span-4-2">deb-src https://mirrors.aliyun.com/debian/ bullseye main non-free contrib
-</span><span id="__span-4-3">deb https://mirrors.aliyun.com/debian-security/ bullseye-security main
-</span><span id="__span-4-4">deb-src https://mirrors.aliyun.com/debian-security/ bullseye-security main
-</span><span id="__span-4-5">deb https://mirrors.aliyun.com/debian/ bullseye-updates main non-free contrib
-</span><span id="__span-4-6">deb-src https://mirrors.aliyun.com/debian/ bullseye-updates main non-free contrib
-</span><span id="__span-4-7">deb https://mirrors.aliyun.com/debian/ bullseye-backports main non-free contrib
-</span><span id="__span-4-8">deb-src https://mirrors.aliyun.com/debian/ bullseye-backports main non-free contrib
+<div class="language-markdown highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Markdown</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1">XXXX
+</span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</div>
+<h3 id="centos">Centos<a class="headerlink" href="#centos" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">阿里源</p>
+<p>先备份<code>/etc/yum.repo.d/*.repo</code> 文件, 然后在<code>/etc/yum.repo.d/*.repo</code>添加以下条目</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">centos 8.5.2111</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-markdown highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Markdown</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><span class="gh"># CentOS-Base.repo</span>
+</span><span id="__span-5-2"><span class="gh">#</span>
+</span><span id="__span-5-3"><span class="gh"># The mirror system uses the connecting IP address of the client and the</span>
+</span><span id="__span-5-4"><span class="gh"># update status of each mirror to pick mirrors that are updated to and</span>
+</span><span id="__span-5-5"><span class="gh"># geographically close to the client.  You should use this for CentOS updates</span>
+</span><span id="__span-5-6"><span class="gh"># unless you are manually picking other mirrors.</span>
+</span><span id="__span-5-7"><span class="gh">#</span>
+</span><span id="__span-5-8"><span class="gh"># If the mirrorlist= does not work for you, as a fall back you can try the </span>
+</span><span id="__span-5-9"><span class="gh"># remarked out baseurl= line instead.</span>
+</span><span id="__span-5-10"><span class="gh">#</span>
+</span><span id="__span-5-11"><span class="gh">#</span>
+</span><span id="__span-5-12">
+</span><span id="__span-5-13">[base]
+</span><span id="__span-5-14">name=CentOS-8.5.2111 - Base - mirrors.aliyun.com
+</span><span id="__span-5-15">baseurl=http://mirrors.aliyun.com/centos-vault/8.5.2111/BaseOS/$basearch/os/
+</span><span id="__span-5-16">        http://mirrors.aliyuncs.com/centos-vault/8.5.2111/BaseOS/$basearch/os/
+</span><span id="__span-5-17">        http://mirrors.cloud.aliyuncs.com/centos-vault/8.5.2111/BaseOS/$basearch/os/
+</span><span id="__span-5-18">gpgcheck=0
+</span><span id="__span-5-19">gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-Official
+</span><span id="__span-5-20">
+</span><span id="__span-5-21"><span class="gh">#additional packages that may be useful</span>
+</span><span id="__span-5-22">[extras]
+</span><span id="__span-5-23">name=CentOS-8.5.2111 - Extras - mirrors.aliyun.com
+</span><span id="__span-5-24">baseurl=http://mirrors.aliyun.com/centos-vault/8.5.2111/extras/$basearch/os/
+</span><span id="__span-5-25">        http://mirrors.aliyuncs.com/centos-vault/8.5.2111/extras/$basearch/os/
+</span><span id="__span-5-26">        http://mirrors.cloud.aliyuncs.com/centos-vault/8.5.2111/extras/$basearch/os/
+</span><span id="__span-5-27">gpgcheck=0
+</span><span id="__span-5-28">gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-Official
+</span><span id="__span-5-29">
+</span><span id="__span-5-30"><span class="gh">#additional packages that extend functionality of existing packages</span>
+</span><span id="__span-5-31">[centosplus]
+</span><span id="__span-5-32">name=CentOS-8.5.2111 - Plus - mirrors.aliyun.com
+</span><span id="__span-5-33">baseurl=http://mirrors.aliyun.com/centos-vault/8.5.2111/centosplus/$basearch/os/
+</span><span id="__span-5-34">        http://mirrors.aliyuncs.com/centos-vault/8.5.2111/centosplus/$basearch/os/
+</span><span id="__span-5-35">        http://mirrors.cloud.aliyuncs.com/centos-vault/8.5.2111/centosplus/$basearch/os/
+</span><span id="__span-5-36">gpgcheck=0
+</span><span id="__span-5-37">enabled=0
+</span><span id="__span-5-38">gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-Official
+</span><span id="__span-5-39">
+</span><span id="__span-5-40">[PowerTools]
+</span><span id="__span-5-41">name=CentOS-8.5.2111 - PowerTools - mirrors.aliyun.com
+</span><span id="__span-5-42">baseurl=http://mirrors.aliyun.com/centos-vault/8.5.2111/PowerTools/$basearch/os/
+</span><span id="__span-5-43">        http://mirrors.aliyuncs.com/centos-vault/8.5.2111/PowerTools/$basearch/os/
+</span><span id="__span-5-44">        http://mirrors.cloud.aliyuncs.com/centos-vault/8.5.2111/PowerTools/$basearch/os/
+</span><span id="__span-5-45">gpgcheck=0
+</span><span id="__span-5-46">enabled=0
+</span><span id="__span-5-47">gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-Official
+</span><span id="__span-5-48">
+</span><span id="__span-5-49">
+</span><span id="__span-5-50">[AppStream]
+</span><span id="__span-5-51">name=CentOS-8.5.2111 - AppStream - mirrors.aliyun.com
+</span><span id="__span-5-52">baseurl=http://mirrors.aliyun.com/centos-vault/8.5.2111/AppStream/$basearch/os/
+</span><span id="__span-5-53">        http://mirrors.aliyuncs.com/centos-vault/8.5.2111/AppStream/$basearch/os/
+</span><span id="__span-5-54">        http://mirrors.cloud.aliyuncs.com/centos-vault/8.5.2111/AppStream/$basearch/os/
+</span><span id="__span-5-55">gpgcheck=0
+</span><span id="__span-5-56">gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-Official
 </span></code></pre></div></td></tr></table></div>
 </div>
 </div>
