@@ -756,11 +756,25 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">阿里源</label><label for="__tabbed_1_2">清华源</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-markdown highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Markdown</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="k">*</span><span class="w"> </span>Sed sagittis eleifend rutrum
-</span><span id="__span-0-2"><span class="k">*</span><span class="w"> </span>Donec vitae suscipit est
-</span><span id="__span-0-3"><span class="k">*</span><span class="w"> </span>Nulla tempor lobortis orci
+<div class="language-markdown highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Markdown</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="gh"># debian 10.x (buster)</span>
+</span><span id="__span-0-2"><span class="gh"># 编辑/etc/apt/sources.list文件(需要使用sudo), 在文件最前面添加以下条目(操作前请做好相应备份)</span>
+</span><span id="__span-0-3">deb https://mirrors.aliyun.com/debian/ bullseye main non-free contrib
+</span><span id="__span-0-4">deb-src https://mirrors.aliyun.com/debian/ bullseye main non-free contrib
+</span><span id="__span-0-5">deb https://mirrors.aliyun.com/debian-security/ bullseye-security main
+</span><span id="__span-0-6">deb-src https://mirrors.aliyun.com/debian-security/ bullseye-security main
+</span><span id="__span-0-7">deb https://mirrors.aliyun.com/debian/ bullseye-updates main non-free contrib
+</span><span id="__span-0-8">deb-src https://mirrors.aliyun.com/debian/ bullseye-updates main non-free contrib
+</span><span id="__span-0-9">deb https://mirrors.aliyun.com/debian/ bullseye-backports main non-free contrib
+</span><span id="__span-0-10">deb-src https://mirrors.aliyun.com/debian/ bullseye-backports main non-free contrib
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
