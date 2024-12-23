@@ -1,0 +1,1455 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="计算机软件硬件知识笔记资源的分享站">
+      
+      
+        <meta name="author" content="mvfeng">
+      
+      
+        <link rel="canonical" href="https://www.94c.cn/linux/operation/raid%E5%8D%A1os%E5%91%BD%E4%BB%A4/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Raid卡os命令 - 94C官网</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../mkdocs/css/no-footer.css">
+    
+      <link rel="stylesheet" href="../../../mkdocs/css/unordered-list-symbols.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#9361-8i" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="94C官网" class="md-header__button md-logo" aria-label="94C官网" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            94C官网
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Raid卡os命令
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="orange"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mvfeng/www_edit.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    www_edit
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../home/index.md" class="md-tabs__link">
+        
+  
+    
+  
+  主页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../pcie3.0_mindshare/18_SystemReset%E7%B3%BB%E7%BB%9F%E5%A4%8D%E4%BD%8D/" class="md-tabs__link">
+          
+  
+    
+  
+  PCIe
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../nmcli%E9%85%8D%E7%BD%AEip/" class="md-tabs__link">
+          
+  
+    
+  
+  Linux运维
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="94C官网" class="md-nav__button md-logo" aria-label="94C官网" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    94C官网
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mvfeng/www_edit.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    www_edit
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../home/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    主页
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    PCIe
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            PCIe
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    pcie3.0_mindshare
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            pcie3.0_mindshare
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pcie3.0_mindshare/18_SystemReset%E7%B3%BB%E7%BB%9F%E5%A4%8D%E4%BD%8D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18_SystemReset系统复位
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Linux运维
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Linux运维
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    常见问题
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            常见问题
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nmcli%E9%85%8D%E7%BD%AEip/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nmcli配置ip
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bmc%E5%B8%B8%E7%94%A8ipmitool%E6%8C%87%E4%BB%A4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    bmc常用ipmitool指令
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux%E5%B8%B8%E7%94%A8%E6%BA%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux常用源
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iperf3%E7%9B%B8%E4%BA%92%E6%89%93%E6%B5%81/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    iperf3相互打流
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../centos8%E5%BF%98%E8%AE%B0%E5%AF%86%E7%A0%81%E5%A6%82%E4%BD%95%E9%87%8D%E7%BD%AE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Centos8忘记密码如何重置
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python%E5%85%A8%E5%AE%89%E8%A3%85/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python全安装
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#9361-8i" class="md-nav__link">
+    <span class="md-ellipsis">
+      9361-8i卡
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9361-8i卡">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ugoodonly" class="md-nav__link">
+    <span class="md-ellipsis">
+      ugood切only
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onlnugoodforce" class="md-nav__link">
+    <span class="md-ellipsis">
+      onln切换ugood,当盘有系统加force
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      查看信息状态
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raid" class="md-nav__link">
+    <span class="md-ellipsis">
+      删除raid组
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raid_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      删除raid后查看状态
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raid1" class="md-nav__link">
+    <span class="md-ellipsis">
+      组建raid1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建分区
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fio" class="md-nav__link">
+    <span class="md-ellipsis">
+      跑fio
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/mvfeng/www_edit.git/edit/main/docs/linux/operation/raid卡os命令.md" title="编辑此页" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+  <h1>Raid卡os命令</h1>
+
+<blockquote>
+<p>1、组建raid要求(raid1=2，raid5=3，raid6=4，raid10=4，raid50=6，raid60=8)
+2、phy注错（raid盘大于2块，linkreset/hardreset可以跑其中一部分，disbale的不能跑raid）
+3、jbod：逻辑上将几个物理磁盘连起来,看起来像一个大的逻辑磁盘，无容错。
+4、ugood：空闲盘（Unconfigured Good状态的硬盘），表示可以直接制作raid
+5、若磁盘状态为JBOD，则制作raid时会出错，必须将JBOD状态修改为UGood状态，才能正常制作raid</p>
+</blockquote>
+<h3 id="9361-8i">9361-8i卡<a class="headerlink" href="#9361-8i" title="Permanent link">&para;</a></h3>
+<p>(only不能配置raid，得先切换ugood,最好类型相同,ugood状态下看不到盘符)</p>
+<h6 id="ugoodonly">ugood切only<a class="headerlink" href="#ugoodonly" title="Permanent link">&para;</a></h6>
+<p><code>storcli /c0 set jbod=on</code></p>
+<h6 id="onlnugoodforce">onln切换ugood,当盘有系统加force<a class="headerlink" href="#onlnugoodforce" title="Permanent link">&para;</a></h6>
+<p><code>storcli /c0 set jbod=off force</code></p>
+<h6 id="_1">查看信息状态<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h6>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1">storcli show
+</span><span id="__span-0-2">storcli /c0 show
+</span></code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1">[root@localhost Linux]# storcli /c0 show
+</span><span id="__span-1-2">Generating detailed summary of the adapter, it may take a while to complete.
+</span><span id="__span-1-3">
+</span><span id="__span-1-4">CLI Version = 007.0510.0000.0000 May 4, 2018
+</span><span id="__span-1-5">Operating system = Linux 3.10.0-1127.el7.x86_64
+</span><span id="__span-1-6">Controller = 0
+</span><span id="__span-1-7">Status = Success
+</span><span id="__span-1-8">Description = None
+</span><span id="__span-1-9">
+</span><span id="__span-1-10">Product Name = AVAGO MegaRAID SAS 9361-16i
+</span><span id="__span-1-11">Serial Number = SKB2183970
+</span><span id="__span-1-12">SAS Address =  500062b207f9fac0
+</span><span id="__span-1-13">PCI Address = 00:8d:00:00
+</span><span id="__span-1-14">System Time = 12/21/2024 18:03:26
+</span><span id="__span-1-15">Mfg. Date = 06/01/21
+</span><span id="__span-1-16">Controller Time = 12/21/2024 10:03:25
+</span><span id="__span-1-17">FW Package Build = 24.22.0-0091
+</span><span id="__span-1-18">BIOS Version = 6.36.00.3_4.19.08.00_0x06180205
+</span><span id="__span-1-19">FW Version = 4.740.00-8464
+</span><span id="__span-1-20">Driver Name = megaraid_sas
+</span><span id="__span-1-21">Driver Version = 07.710.50.00-rh1
+</span><span id="__span-1-22">Current Personality = RAID-Mode
+</span><span id="__span-1-23">Vendor Id = 0x1000
+</span><span id="__span-1-24">Device Id = 0xCE
+</span><span id="__span-1-25">SubVendor Id = 0x1000
+</span><span id="__span-1-26">SubDevice Id = 0x9371
+</span><span id="__span-1-27">Host Interface = PCI-E
+</span><span id="__span-1-28">Device Interface = SAS-12G
+</span><span id="__span-1-29">Bus Number = 141
+</span><span id="__span-1-30">Device Number = 0
+</span><span id="__span-1-31">Function Number = 0
+</span><span id="__span-1-32">Drive Groups = 1
+</span><span id="__span-1-33">
+</span><span id="__span-1-34">TOPOLOGY :
+</span><span id="__span-1-35">========
+</span><span id="__span-1-36">
+</span><span id="__span-1-37">---------------------------------------------------------------------------
+</span><span id="__span-1-38">DG Arr Row EID:Slot DID Type  State BT     Size PDC  PI SED DS3  FSpace TR
+</span><span id="__span-1-39">---------------------------------------------------------------------------
+</span><span id="__span-1-40"> 0 -   -   -        -   RAID1 Optl  N  1.818 TB dflt N  N   dflt Y      N
+</span><span id="__span-1-41"> 0 0   -   -        -   RAID1 Optl  N  1.818 TB dflt N  N   dflt Y      N
+</span><span id="__span-1-42"> 0 0   0   252:2    1   DRIVE Onln  N  3.637 TB dflt N  N   dflt -      N
+</span><span id="__span-1-43"> 0 0   1   252:3    3   DRIVE Onln  N  1.818 TB dflt N  N   dflt -      N
+</span><span id="__span-1-44">---------------------------------------------------------------------------
+</span><span id="__span-1-45">
+</span><span id="__span-1-46">DG=Disk Group Index|Arr=Array Index|Row=Row Index|EID=Enclosure Device ID
+</span><span id="__span-1-47">DID=Device ID|Type=Drive Type|Onln=Online|Rbld=Rebuild|Dgrd=Degraded
+</span><span id="__span-1-48">Pdgd=Partially degraded|Offln=Offline|BT=Background Task Active
+</span><span id="__span-1-49">PDC=PD Cache|PI=Protection Info|SED=Self Encrypting Drive|Frgn=Foreign
+</span><span id="__span-1-50">DS3=Dimmer Switch 3|dflt=Default|Msng=Missing|FSpace=Free Space Present
+</span><span id="__span-1-51">TR=Transport Ready
+</span><span id="__span-1-52">
+</span><span id="__span-1-53">Virtual Drives = 1
+</span><span id="__span-1-54">
+</span><span id="__span-1-55">VD LIST :
+</span><span id="__span-1-56">=======
+</span><span id="__span-1-57">
+</span><span id="__span-1-58">---------------------------------------------------------------
+</span><span id="__span-1-59">DG/VD TYPE  State Access Consist Cache Cac sCC     Size Name
+</span><span id="__span-1-60">---------------------------------------------------------------
+</span><span id="__span-1-61">0/0   RAID1 Optl  RW     Yes     RWTD  -   ON  800.0 GB raid_1
+</span><span id="__span-1-62">---------------------------------------------------------------
+</span><span id="__span-1-63">
+</span><span id="__span-1-64">Cac=CacheCade|Rec=Recovery|OfLn=OffLine|Pdgd=Partially Degraded|Dgrd=Degraded
+</span><span id="__span-1-65">Optl=Optimal|RO=Read Only|RW=Read Write|HD=Hidden|TRANS=TransportReady|B=Blocked|
+</span><span id="__span-1-66">Consist=Consistent|R=Read Ahead Always|NR=No Read Ahead|WB=WriteBack|
+</span><span id="__span-1-67">AWB=Always WriteBack|WT=WriteThrough|C=Cached IO|D=Direct IO|sCC=Scheduled
+</span><span id="__span-1-68">Check Consistency
+</span><span id="__span-1-69">
+</span><span id="__span-1-70">Physical Drives = 2
+</span><span id="__span-1-71">
+</span><span id="__span-1-72">PD LIST :
+</span><span id="__span-1-73">=======
+</span><span id="__span-1-74">
+</span><span id="__span-1-75">--------------------------------------------------------------------------------
+</span><span id="__span-1-76">EID:Slt DID State DG     Size Intf Med SED PI SeSz Model                Sp Type
+</span><span id="__span-1-77">--------------------------------------------------------------------------------
+</span><span id="__span-1-78">252:2     1 Onln   0 3.637 TB SATA HDD N   N  512B HGST HUS726T4TALE6L4 U  -
+</span><span id="__span-1-79">252:3     3 Onln   0 1.818 TB SATA HDD N   N  512B TOSHIBA MG04ACA200N  U  -
+</span><span id="__span-1-80">--------------------------------------------------------------------------------
+</span><span id="__span-1-81">
+</span><span id="__span-1-82">EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+</span><span id="__span-1-83">DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+</span><span id="__span-1-84">UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+</span><span id="__span-1-85">Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+</span><span id="__span-1-86">SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+</span><span id="__span-1-87">UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+</span><span id="__span-1-88">CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+</span></code></pre></div></td></tr></table></div>
+<h6 id="raid">删除raid组<a class="headerlink" href="#raid" title="Permanent link">&para;</a></h6>
+<p><code>storcli64 /ccontroller_id /vraid_id del</code></p>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1">[root@localhost Linux]# storcli /c0/v0 delete
+</span><span id="__span-2-2">CLI Version = 007.0510.0000.0000 May 4, 2018
+</span><span id="__span-2-3">Operating system = Linux 3.10.0-1127.el7.x86_64
+</span><span id="__span-2-4">Controller = 0
+</span><span id="__span-2-5">Status = Failure
+</span><span id="__span-2-6">Description = Delete VD failed
+</span><span id="__span-2-7">
+</span><span id="__span-2-8">Detailed Status :
+</span><span id="__span-2-9">===============
+</span><span id="__span-2-10">
+</span><span id="__span-2-11">----------------------------------
+</span><span id="__span-2-12">VD ErrCd Status
+</span><span id="__span-2-13">----------------------------------
+</span><span id="__span-2-14"> 0   255 VD has OS/FS, use force.
+</span><span id="__span-2-15">----------------------------------
+</span><span id="__span-2-16">
+</span><span id="__span-2-17">
+</span><span id="__span-2-18">
+</span><span id="__span-2-19">[root@localhost Linux]# storcli /c0/v0 delete force
+</span><span id="__span-2-20">CLI Version = 007.0510.0000.0000 May 4, 2018
+</span><span id="__span-2-21">Operating system = Linux 3.10.0-1127.el7.x86_64
+</span><span id="__span-2-22">Controller = 0
+</span><span id="__span-2-23">Status = Success
+</span><span id="__span-2-24">Description = Delete VD succeeded
+</span></code></pre></div></td></tr></table></div>
+<h6 id="raid_1">删除raid后查看状态<a class="headerlink" href="#raid_1" title="Permanent link">&para;</a></h6>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1">[root@localhost Linux]# storcli /c0 show
+</span><span id="__span-3-2">Generating detailed summary of the adapter, it may take a while to complete.
+</span><span id="__span-3-3">
+</span><span id="__span-3-4">CLI Version = 007.0510.0000.0000 May 4, 2018
+</span><span id="__span-3-5">Operating system = Linux 3.10.0-1127.el7.x86_64
+</span><span id="__span-3-6">Controller = 0
+</span><span id="__span-3-7">Status = Success
+</span><span id="__span-3-8">Description = None
+</span><span id="__span-3-9">
+</span><span id="__span-3-10">Product Name = AVAGO MegaRAID SAS 9361-16i
+</span><span id="__span-3-11">Serial Number = SKB2183970
+</span><span id="__span-3-12">SAS Address =  500062b207f9fac0
+</span><span id="__span-3-13">PCI Address = 00:8d:00:00
+</span><span id="__span-3-14">System Time = 12/21/2024 18:12:58
+</span><span id="__span-3-15">Mfg. Date = 06/01/21
+</span><span id="__span-3-16">Controller Time = 12/21/2024 10:12:56
+</span><span id="__span-3-17">FW Package Build = 24.22.0-0091
+</span><span id="__span-3-18">BIOS Version = 6.36.00.3_4.19.08.00_0x06180205
+</span><span id="__span-3-19">FW Version = 4.740.00-8464
+</span><span id="__span-3-20">Driver Name = megaraid_sas
+</span><span id="__span-3-21">Driver Version = 07.710.50.00-rh1
+</span><span id="__span-3-22">Current Personality = RAID-Mode
+</span><span id="__span-3-23">Vendor Id = 0x1000
+</span><span id="__span-3-24">Device Id = 0xCE
+</span><span id="__span-3-25">SubVendor Id = 0x1000
+</span><span id="__span-3-26">SubDevice Id = 0x9371
+</span><span id="__span-3-27">Host Interface = PCI-E
+</span><span id="__span-3-28">Device Interface = SAS-12G
+</span><span id="__span-3-29">Bus Number = 141
+</span><span id="__span-3-30">Device Number = 0
+</span><span id="__span-3-31">Function Number = 0
+</span><span id="__span-3-32">Physical Drives = 2
+</span><span id="__span-3-33">
+</span><span id="__span-3-34">PD LIST :
+</span><span id="__span-3-35">=======
+</span><span id="__span-3-36">
+</span><span id="__span-3-37">--------------------------------------------------------------------------------
+</span><span id="__span-3-38">EID:Slt DID State DG     Size Intf Med SED PI SeSz Model                Sp Type
+</span><span id="__span-3-39">--------------------------------------------------------------------------------
+</span><span id="__span-3-40">252:2     1 UGood -  3.637 TB SATA HDD N   N  512B HGST HUS726T4TALE6L4 U  -
+</span><span id="__span-3-41">252:3     3 UGood -  1.818 TB SATA HDD N   N  512B TOSHIBA MG04ACA200N  U  -
+</span><span id="__span-3-42">--------------------------------------------------------------------------------
+</span><span id="__span-3-43">
+</span><span id="__span-3-44">EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+</span><span id="__span-3-45">DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+</span><span id="__span-3-46">UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+</span><span id="__span-3-47">Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+</span><span id="__span-3-48">SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+</span><span id="__span-3-49">UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+</span><span id="__span-3-50">CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+</span></code></pre></div></td></tr></table></div>
+<h6 id="raid1">组建raid1<a class="headerlink" href="#raid1" title="Permanent link">&para;</a></h6>
+<p><code>storcli64 /ccontroller_id add vd rlevel[0|1|5|6|10|50|60] [size=&lt;VD1_Sz&gt;,&lt;VD2_Sz&gt;,..|*all] [name=&lt;VDNAME1&gt;,..] drives=enclosure_id:slot_id|enclosure_id:startid-endid,enclosure_id:slot_id|enclosure_id:startid-endid [pdperarray=pdperarray] [pdcache=on|off|*default][pi] [wt|*wb|awb] [nora|*ra] [Strip=&lt;8|16|32|64|128|256|1024&gt;] [EmulationType=0|1|2] [Spares=[enclosure_id:slot_id|enclosure_id:startid-endid,enclosure_id:slot_id|enclosure_id:startid-endid]</code></p>
+<p><code>storcli /c0 add vd raid1 size=200gb name=testraid1 drives=252:2-3</code></p>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1">[root@localhost Linux]# storcli /c0 add vd raid1 size=1000gb name=testraid1 drives=252:2-3
+</span><span id="__span-4-2">CLI Version = 007.0510.0000.0000 May 4, 2018
+</span><span id="__span-4-3">Operating system = Linux 3.10.0-1127.el7.x86_64
+</span><span id="__span-4-4">Controller = 0
+</span><span id="__span-4-5">Status = Success
+</span><span id="__span-4-6">Description = Add VD Succeeded
+</span></code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1">[root@localhost Linux]# lsblk
+</span><span id="__span-5-2">NAME            MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+</span><span id="__span-5-3">sda               8:0    0  1000G  0 disk
+</span><span id="__span-5-4">sdb               8:16   0 447.1G  0 disk
+</span><span id="__span-5-5">├─sdb1            8:17   0   200M  0 part /boot/efi
+</span><span id="__span-5-6">├─sdb2            8:18   0     1G  0 part /boot
+</span><span id="__span-5-7">└─sdb3            8:19   0   446G  0 part
+</span><span id="__span-5-8">  ├─centos-root 253:0    0    50G  0 lvm  /
+</span><span id="__span-5-9">  ├─centos-swap 253:1    0     4G  0 lvm  [SWAP]
+</span><span id="__span-5-10">  └─centos-home 253:2    0   392G  0 lvm  /home
+</span></code></pre></div></td></tr></table></div>
+<h6 id="_2">创建分区<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h6>
+<p><code>fdisk /dev/sda</code>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1">[root@localhost Linux]# fdisk /dev/sda
+</span><span id="__span-6-2">
+</span><span id="__span-6-3">The device presents a logical sector size that is smaller than
+</span><span id="__span-6-4">the physical sector size. Aligning to a physical sector (or optimal
+</span><span id="__span-6-5">I/O) size boundary is recommended, or performance may be impacted.
+</span><span id="__span-6-6">Welcome to fdisk (util-linux 2.23.2).
+</span><span id="__span-6-7">
+</span><span id="__span-6-8">Changes will remain in memory only, until you decide to write them.
+</span><span id="__span-6-9">Be careful before using the write command.
+</span><span id="__span-6-10">
+</span><span id="__span-6-11">
+</span><span id="__span-6-12">Command (m for help): n
+</span><span id="__span-6-13">Partition type:
+</span><span id="__span-6-14">   p   primary (0 primary, 0 extended, 4 free)
+</span><span id="__span-6-15">   e   extended
+</span><span id="__span-6-16">Select (default p):
+</span><span id="__span-6-17">Using default response p
+</span><span id="__span-6-18">Partition number (1-4, default 1):
+</span><span id="__span-6-19">First sector (2048-2097151999, default 2048):
+</span><span id="__span-6-20">Using default value 2048
+</span><span id="__span-6-21">Last sector, +sectors or +size{K,M,G} (2048-2097151999, default 2097151999):
+</span><span id="__span-6-22">Using default value 2097151999
+</span><span id="__span-6-23">Partition 1 of type Linux and of size 1000 GiB is set
+</span><span id="__span-6-24">
+</span><span id="__span-6-25">Command (m for help): w
+</span><span id="__span-6-26">The partition table has been altered!
+</span><span id="__span-6-27">
+</span><span id="__span-6-28">Calling ioctl() to re-read partition table.
+</span><span id="__span-6-29">Syncing disks.
+</span><span id="__span-6-30">[root@localhost Linux]# lsblk
+</span><span id="__span-6-31">NAME            MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+</span><span id="__span-6-32">sda               8:0    0  1000G  0 disk
+</span><span id="__span-6-33">└─sda1            8:1    0  1000G  0 part
+</span><span id="__span-6-34">sdb               8:16   0 447.1G  0 disk
+</span><span id="__span-6-35">├─sdb1            8:17   0   200M  0 part /boot/efi
+</span><span id="__span-6-36">├─sdb2            8:18   0     1G  0 part /boot
+</span><span id="__span-6-37">└─sdb3            8:19   0   446G  0 part
+</span><span id="__span-6-38">  ├─centos-root 253:0    0    50G  0 lvm  /
+</span><span id="__span-6-39">  ├─centos-swap 253:1    0     4G  0 lvm  [SWAP]
+</span><span id="__span-6-40">  └─centos-home 253:2    0   392G  0 lvm  /home
+</span></code></pre></div></td></tr></table></div></p>
+<h6 id="fio">跑fio<a class="headerlink" href="#fio" title="Permanent link">&para;</a></h6>
+<p><code>fio fio.conf</code></p>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1">[global]
+</span><span id="__span-7-2">#kb_base=1000
+</span><span id="__span-7-3">#unit_base=0
+</span><span id="__span-7-4">numjobs=1
+</span><span id="__span-7-5">time_based
+</span><span id="__span-7-6">runtime=54000
+</span><span id="__span-7-7">#21600 6小时 54000 15
+</span><span id="__span-7-8">#604800秒(7天)
+</span><span id="__span-7-9">direct=1
+</span><span id="__span-7-10">rw=rw
+</span><span id="__span-7-11">#rw=randrw
+</span><span id="__span-7-12">rwmixwrite=50
+</span><span id="__span-7-13">bs=1024k
+</span><span id="__span-7-14">size=40G
+</span><span id="__span-7-15">ioengine=libaio
+</span><span id="__span-7-16">iodepth=64
+</span><span id="__span-7-17">thread
+</span><span id="__span-7-18">verify=md5
+</span><span id="__span-7-19">group_reporting
+</span><span id="__span-7-20">
+</span><span id="__span-7-21">[job.nvme0.0]
+</span><span id="__span-7-22">name=&quot;job_nvme0_0&quot;
+</span><span id="__span-7-23">filename=/dev/nvme0n1
+</span><span id="__span-7-24">offset=100G
+</span></code></pre></div></td></tr></table></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 94c.cn
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/mvfeng/www_edit.git" target="_blank" rel="noopener" title="GitHub | mvfeng" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+        <script src="../../../mkdocs/javascripts/katex.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+      
+        <script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2832930496782786"></script>
+      
+    
+  </body>
+</html>
