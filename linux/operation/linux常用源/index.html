@@ -753,6 +753,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#openeuler" class="md-nav__link">
+    <span class="md-ellipsis">
+      openEuler
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -955,6 +964,15 @@
   <a href="#centos" class="md-nav__link">
     <span class="md-ellipsis">
       Centos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openeuler" class="md-nav__link">
+    <span class="md-ellipsis">
+      openEuler
     </span>
   </a>
   
@@ -1480,6 +1498,265 @@
 </span><span id="__span-8-60">gpgcheck=1
 </span><span id="__span-8-61">enabled=0
 </span><span id="__span-8-62">gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-7
+</span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</div>
+<h3 id="openeuler">openEuler<a class="headerlink" href="#openeuler" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">阿里源</p>
+<p>先备份 /etc/apt/sources.list文件 (需要使用sudo), 然后在/etc/apt/sources.list 添加以下条目</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">openEuler-22.03-LTS</label><label for="__tabbed_6_2">openEuler-22.03-LTS-SP1</label><label for="__tabbed_6_3">openEuler 22.03-LTS</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-markdown highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Markdown</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><span class="gh">#generic-repos is licensed under the Mulan PSL v2.</span>
+</span><span id="__span-9-2"><span class="gh">#You can use this software according to the terms and conditions of the Mulan PSL v2.</span>
+</span><span id="__span-9-3"><span class="gh">#You may obtain a copy of Mulan PSL v2 at:</span>
+</span><span id="__span-9-4"><span class="gh">#    http://license.coscl.org.cn/MulanPSL2</span>
+</span><span id="__span-9-5"><span class="gh">#THIS SOFTWARE IS PROVIDED ON AN &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR</span>
+</span><span id="__span-9-6"><span class="gh">#IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY OR FIT FOR A PARTICULAR</span>
+</span><span id="__span-9-7"><span class="gh">#PURPOSE.</span>
+</span><span id="__span-9-8"><span class="gh">#See the Mulan PSL v2 for more details.</span>
+</span><span id="__span-9-9">
+</span><span id="__span-9-10">[OS]
+</span><span id="__span-9-11">name=OS
+</span><span id="__span-9-12">baseurl=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS/OS/$basearch/
+</span><span id="__span-9-13">enabled=1
+</span><span id="__span-9-14">gpgcheck=1
+</span><span id="__span-9-15">gpgkey=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS/OS/$basearch/RPM-GPG-KEY-openEuler
+</span><span id="__span-9-16">
+</span><span id="__span-9-17">[everything]
+</span><span id="__span-9-18">name=everything
+</span><span id="__span-9-19">baseurl=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS/everything/$basearch/
+</span><span id="__span-9-20">enabled=1
+</span><span id="__span-9-21">gpgcheck=1
+</span><span id="__span-9-22">gpgkey=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS/everything/$basearch/RPM-GPG-KEY-openEuler
+</span><span id="__span-9-23">
+</span><span id="__span-9-24">[EPOL]
+</span><span id="__span-9-25">name=EPOL
+</span><span id="__span-9-26">baseurl=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS/EPOL/main/$basearch/
+</span><span id="__span-9-27">enabled=1
+</span><span id="__span-9-28">gpgcheck=1
+</span><span id="__span-9-29">gpgkey=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS/OS/$basearch/RPM-GPG-KEY-openEuler
+</span><span id="__span-9-30">
+</span><span id="__span-9-31">[debuginfo]
+</span><span id="__span-9-32">name=debuginfo
+</span><span id="__span-9-33">baseurl=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS/debuginfo/$basearch/
+</span><span id="__span-9-34">enabled=1
+</span><span id="__span-9-35">gpgcheck=1
+</span><span id="__span-9-36">gpgkey=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS/debuginfo/$basearch/RPM-GPG-KEY-openEuler
+</span><span id="__span-9-37">
+</span><span id="__span-9-38">[source]
+</span><span id="__span-9-39">name=source
+</span><span id="__span-9-40">baseurl=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS/source/
+</span><span id="__span-9-41">enabled=1
+</span><span id="__span-9-42">gpgcheck=1
+</span><span id="__span-9-43">gpgkey=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS/source/RPM-GPG-KEY-openEuler
+</span><span id="__span-9-44">
+</span><span id="__span-9-45">[update]
+</span><span id="__span-9-46">name=update
+</span><span id="__span-9-47">baseurl=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS/update/$basearch/
+</span><span id="__span-9-48">enabled=1
+</span><span id="__span-9-49">gpgcheck=1
+</span><span id="__span-9-50">gpgkey=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS/OS/$basearch/RPM-GPG-KEY-openEuler
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-markdown highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Markdown</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><span class="gh">#generic-repos is licensed under the Mulan PSL v2.</span>
+</span><span id="__span-10-2"><span class="gh">#You can use this software according to the terms and conditions of the Mulan PSL v2.</span>
+</span><span id="__span-10-3"><span class="gh">#You may obtain a copy of Mulan PSL v2 at:</span>
+</span><span id="__span-10-4"><span class="gh">#    http://license.coscl.org.cn/MulanPSL2</span>
+</span><span id="__span-10-5"><span class="gh">#THIS SOFTWARE IS PROVIDED ON AN &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR</span>
+</span><span id="__span-10-6"><span class="gh">#IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY OR FIT FOR A PARTICULAR</span>
+</span><span id="__span-10-7"><span class="gh">#PURPOSE.</span>
+</span><span id="__span-10-8"><span class="gh">#See the Mulan PSL v2 for more details.</span>
+</span><span id="__span-10-9">
+</span><span id="__span-10-10">[OS]
+</span><span id="__span-10-11">name=OS
+</span><span id="__span-10-12">baseurl=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP1/OS/$basearch/
+</span><span id="__span-10-13"><span class="gh">#metalink=https://mirrors.openeuler.org/metalink?repo=$releasever/OS&amp;arch=$basearch</span>
+</span><span id="__span-10-14">metadata_expire=1h
+</span><span id="__span-10-15">enabled=1
+</span><span id="__span-10-16">gpgcheck=1
+</span><span id="__span-10-17">gpgkey=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP1/OS/$basearch/RPM-GPG-KEY-openEuler
+</span><span id="__span-10-18">
+</span><span id="__span-10-19">[everything]
+</span><span id="__span-10-20">name=everything
+</span><span id="__span-10-21">baseurl=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP1/everything/$basearch/
+</span><span id="__span-10-22"><span class="gh">#metalink=https://mirrors.openeuler.org/metalink?repo=$releasever/everything&amp;arch=$basearch</span>
+</span><span id="__span-10-23">metadata_expire=1h
+</span><span id="__span-10-24">enabled=1
+</span><span id="__span-10-25">gpgcheck=1
+</span><span id="__span-10-26">gpgkey=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP1/everything/$basearch/RPM-GPG-KEY-openEuler
+</span><span id="__span-10-27">
+</span><span id="__span-10-28">[EPOL]
+</span><span id="__span-10-29">name=EPOL
+</span><span id="__span-10-30">baseurl=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP1/EPOL/main/$basearch/
+</span><span id="__span-10-31"><span class="gh">#metalink=https://mirrors.openeuler.org/metalink?repo=$releasever/EPOL/main&amp;arch=$basearch</span>
+</span><span id="__span-10-32">metadata_expire=1h
+</span><span id="__span-10-33">enabled=1
+</span><span id="__span-10-34">gpgcheck=1
+</span><span id="__span-10-35">gpgkey=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP1/OS/$basearch/RPM-GPG-KEY-openEuler
+</span><span id="__span-10-36">
+</span><span id="__span-10-37">[debuginfo]
+</span><span id="__span-10-38">name=debuginfo
+</span><span id="__span-10-39">baseurl=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP1/debuginfo/$basearch/
+</span><span id="__span-10-40"><span class="gh">#metalink=https://mirrors.openeuler.org/metalink?repo=$releasever/debuginfo&amp;arch=$basearch</span>
+</span><span id="__span-10-41">metadata_expire=1h
+</span><span id="__span-10-42">enabled=1
+</span><span id="__span-10-43">gpgcheck=1
+</span><span id="__span-10-44">gpgkey=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP1/debuginfo/$basearch/RPM-GPG-KEY-openEuler
+</span><span id="__span-10-45">
+</span><span id="__span-10-46">[source]
+</span><span id="__span-10-47">name=source
+</span><span id="__span-10-48">baseurl=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP1/source/
+</span><span id="__span-10-49"><span class="gh">#metalink=https://mirrors.openeuler.org/metalink?repo=$releasever&amp;arch=source</span>
+</span><span id="__span-10-50">metadata_expire=1h
+</span><span id="__span-10-51">enabled=1
+</span><span id="__span-10-52">gpgcheck=1
+</span><span id="__span-10-53">gpgkey=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP1/source/RPM-GPG-KEY-openEuler
+</span><span id="__span-10-54">
+</span><span id="__span-10-55">[update]
+</span><span id="__span-10-56">name=update
+</span><span id="__span-10-57">baseurl=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP1/update/$basearch/
+</span><span id="__span-10-58"><span class="gh">#metalink=https://mirrors.openeuler.org/metalink?repo=$releasever/update&amp;arch=$basearch</span>
+</span><span id="__span-10-59">metadata_expire=1h
+</span><span id="__span-10-60">enabled=1
+</span><span id="__span-10-61">gpgcheck=1
+</span><span id="__span-10-62">gpgkey=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP1/OS/$basearch/RPM-GPG-KEY-openEuler
+</span><span id="__span-10-63">
+</span><span id="__span-10-64">[update-source]
+</span><span id="__span-10-65">name=update-source
+</span><span id="__span-10-66">baseurl=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP1/update/source/
+</span><span id="__span-10-67"><span class="gh">#metalink=https://mirrors.openeuler.org/metalink?repo=$releasever/update&amp;arch=source</span>
+</span><span id="__span-10-68">metadata_expire=1h
+</span><span id="__span-10-69">enabled=1
+</span><span id="__span-10-70">gpgcheck=1
+</span><span id="__span-10-71">gpgkey=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP1/source/RPM-GPG-KEY-openEuler
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-markdown highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Markdown</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1">XXXX
 </span></code></pre></div></td></tr></table></div>
 </div>
 </div>
