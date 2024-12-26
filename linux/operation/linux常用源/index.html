@@ -1075,7 +1075,7 @@
 <div class="admonition note">
 <p class="admonition-title">阿里源</p>
 <p>先备份 /etc/apt/sources.list文件 (需要使用sudo), 然后在/etc/apt/sources.list 添加以下条目</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">debian 11.x (bullseye)</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Ubuntu 18.04 LTS</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-markdown highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Markdown</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1118,8 +1118,8 @@
 <h3 id="redhat_1">Redhat<a class="headerlink" href="#redhat_1" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">阿里源</p>
-<p>先备份 /etc/apt/sources.list文件 (需要使用sudo), 然后在/etc/apt/sources.list 添加以下条目</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">debian 11.x (bullseye)</label></div>
+<p>先备份<code>/etc/yum.repo.d/*.repo</code> 文件, 然后在<code>/etc/yum.repo.d/*.repo</code>添加以下条目</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">centos xxxx</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-markdown highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Markdown</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1">XXXX
@@ -1507,7 +1507,7 @@
 <div class="admonition note">
 <p class="admonition-title">阿里源</p>
 <p>先备份 /etc/apt/sources.list文件 (需要使用sudo), 然后在/etc/apt/sources.list 添加以下条目</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">openEuler-22.03-LTS</label><label for="__tabbed_6_2">openEuler-22.03-LTS-SP1</label><label for="__tabbed_6_3">openEuler 22.03-LTS</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">openEuler-22.03-LTS</label><label for="__tabbed_6_2">openEuler-22.03-LTS-SP1</label><label for="__tabbed_6_3">openEuler-22.03-LTS-SP2</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-markdown highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Markdown</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1756,7 +1756,147 @@
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="language-markdown highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Markdown</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1">XXXX
+<div class="language-markdown highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Markdown</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><span class="gh">#generic-repos is licensed under the Mulan PSL v2.</span>
+</span><span id="__span-11-2"><span class="gh">#You can use this software according to the terms and conditions of the Mulan PSL v2.</span>
+</span><span id="__span-11-3"><span class="gh">#You may obtain a copy of Mulan PSL v2 at:</span>
+</span><span id="__span-11-4"><span class="gh">#    http://license.coscl.org.cn/MulanPSL2</span>
+</span><span id="__span-11-5"><span class="gh">#THIS SOFTWARE IS PROVIDED ON AN &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR</span>
+</span><span id="__span-11-6"><span class="gh">#IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY OR FIT FOR A PARTICULAR</span>
+</span><span id="__span-11-7"><span class="gh">#PURPOSE.</span>
+</span><span id="__span-11-8"><span class="gh">#See the Mulan PSL v2 for more details.</span>
+</span><span id="__span-11-9">
+</span><span id="__span-11-10">[OS]
+</span><span id="__span-11-11">name=OS
+</span><span id="__span-11-12">baseurl=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP2/OS/$basearch/
+</span><span id="__span-11-13"><span class="gh">#metalink=https://mirrors.openeuler.org/metalink?repo=$releasever/OS&amp;arch=$basearch</span>
+</span><span id="__span-11-14">metadata_expire=1h
+</span><span id="__span-11-15">enabled=1
+</span><span id="__span-11-16">gpgcheck=1
+</span><span id="__span-11-17">gpgkey=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP2/OS/$basearch/RPM-GPG-KEY-openEuler
+</span><span id="__span-11-18">
+</span><span id="__span-11-19">[everything]
+</span><span id="__span-11-20">name=everything
+</span><span id="__span-11-21">baseurl=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP2/everything/$basearch/
+</span><span id="__span-11-22"><span class="gh">#metalink=https://mirrors.openeuler.org/metalink?repo=$releasever/everything&amp;arch=$basearch</span>
+</span><span id="__span-11-23">metadata_expire=1h
+</span><span id="__span-11-24">enabled=1
+</span><span id="__span-11-25">gpgcheck=1
+</span><span id="__span-11-26">gpgkey=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP2/everything/$basearch/RPM-GPG-KEY-openEuler
+</span><span id="__span-11-27">
+</span><span id="__span-11-28">[EPOL]
+</span><span id="__span-11-29">name=EPOL
+</span><span id="__span-11-30">baseurl=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP2/EPOL/main/$basearch/
+</span><span id="__span-11-31"><span class="gh">#metalink=https://mirrors.openeuler.org/metalink?repo=$releasever/EPOL/main&amp;arch=$basearch</span>
+</span><span id="__span-11-32">metadata_expire=1h
+</span><span id="__span-11-33">enabled=1
+</span><span id="__span-11-34">gpgcheck=1
+</span><span id="__span-11-35">gpgkey=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP2/OS/$basearch/RPM-GPG-KEY-openEuler
+</span><span id="__span-11-36">
+</span><span id="__span-11-37">[debuginfo]
+</span><span id="__span-11-38">name=debuginfo
+</span><span id="__span-11-39">baseurl=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP2/debuginfo/$basearch/
+</span><span id="__span-11-40"><span class="gh">#metalink=https://mirrors.openeuler.org/metalink?repo=$releasever/debuginfo&amp;arch=$basearch</span>
+</span><span id="__span-11-41">metadata_expire=1h
+</span><span id="__span-11-42">enabled=1
+</span><span id="__span-11-43">gpgcheck=1
+</span><span id="__span-11-44">gpgkey=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP2/debuginfo/$basearch/RPM-GPG-KEY-openEuler
+</span><span id="__span-11-45">
+</span><span id="__span-11-46">[source]
+</span><span id="__span-11-47">name=source
+</span><span id="__span-11-48">baseurl=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP2/source/
+</span><span id="__span-11-49"><span class="gh">#metalink=https://mirrors.openeuler.org/metalink?repo=$releasever&amp;arch=source</span>
+</span><span id="__span-11-50">metadata_expire=1h
+</span><span id="__span-11-51">enabled=1
+</span><span id="__span-11-52">gpgcheck=1
+</span><span id="__span-11-53">gpgkey=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP2/source/RPM-GPG-KEY-openEuler
+</span><span id="__span-11-54">
+</span><span id="__span-11-55">[update]
+</span><span id="__span-11-56">name=update
+</span><span id="__span-11-57">baseurl=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP2/update/$basearch/
+</span><span id="__span-11-58"><span class="gh">#metalink=https://mirrors.openeuler.org/metalink?repo=$releasever/update&amp;arch=$basearch</span>
+</span><span id="__span-11-59">metadata_expire=1h
+</span><span id="__span-11-60">enabled=1
+</span><span id="__span-11-61">gpgcheck=1
+</span><span id="__span-11-62">gpgkey=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP2/OS/$basearch/RPM-GPG-KEY-openEuler
+</span><span id="__span-11-63">
+</span><span id="__span-11-64">[update-source]
+</span><span id="__span-11-65">name=update-source
+</span><span id="__span-11-66">baseurl=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP2/update/source/
+</span><span id="__span-11-67"><span class="gh">#metalink=https://mirrors.openeuler.org/metalink?repo=$releasever/update&amp;arch=source</span>
+</span><span id="__span-11-68">metadata_expire=1h
+</span><span id="__span-11-69">enabled=1
+</span><span id="__span-11-70">gpgcheck=1
+</span><span id="__span-11-71">gpgkey=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP2/source/RPM-GPG-KEY-openEuler
 </span></code></pre></div></td></tr></table></div>
 </div>
 </div>
