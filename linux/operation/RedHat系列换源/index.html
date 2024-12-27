@@ -713,17 +713,17 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="RedHat系列更换CentOS阿里源镜像">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#red-hat-enterprise-linux-7" class="md-nav__link">
     <span class="md-ellipsis">
       Red Hat Enterprise Linux 7 更换方式：
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Red Hat Enterprise Linux 7 更换方式：">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#1-yum" class="md-nav__link">
@@ -734,12 +734,7 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#2-centos7-5" class="md-nav__link">
     <span class="md-ellipsis">
       2 下载 centos7 相关的5个软件包
@@ -747,8 +742,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
       3 下载完成后，通过以下命令将文件安装到系统中
@@ -756,8 +751,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#4-etcyumreposd" class="md-nav__link">
     <span class="md-ellipsis">
       4 下载阿里镜像到/etc/yum.repos.d/目录下
@@ -765,8 +760,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#5-releasever7" class="md-nav__link">
     <span class="md-ellipsis">
       5 修改刚下载的文件 将所有$releasever替换为7
@@ -774,13 +769,18 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#6" class="md-nav__link">
     <span class="md-ellipsis">
       6 运行以下命令即可
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -923,17 +923,17 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="RedHat系列更换CentOS阿里源镜像">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#red-hat-enterprise-linux-7" class="md-nav__link">
     <span class="md-ellipsis">
       Red Hat Enterprise Linux 7 更换方式：
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Red Hat Enterprise Linux 7 更换方式：">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#1-yum" class="md-nav__link">
@@ -944,12 +944,7 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#2-centos7-5" class="md-nav__link">
     <span class="md-ellipsis">
       2 下载 centos7 相关的5个软件包
@@ -957,8 +952,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
       3 下载完成后，通过以下命令将文件安装到系统中
@@ -966,8 +961,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#4-etcyumreposd" class="md-nav__link">
     <span class="md-ellipsis">
       4 下载阿里镜像到/etc/yum.repos.d/目录下
@@ -975,8 +970,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#5-releasever7" class="md-nav__link">
     <span class="md-ellipsis">
       5 修改刚下载的文件 将所有$releasever替换为7
@@ -984,13 +979,18 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#6" class="md-nav__link">
     <span class="md-ellipsis">
       6 运行以下命令即可
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1019,28 +1019,24 @@
 
   <h1>RedHat系列换源</h1>
 
-<h3 id="redhatcentos">RedHat系列更换CentOS阿里源镜像<a class="headerlink" href="#redhatcentos" title="Permanent link">&para;</a></h3>
+<h2 id="redhatcentos">RedHat系列更换CentOS阿里源镜像<a class="headerlink" href="#redhatcentos" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>在RedHat7、8和9系统上如何替换YUM源为CentOS对应的源，以避免使用RedHat的付费服务。主要步骤包括删除原有YUM包，下载并安装CentOS相关软件包，下载并配置CentOS的repo文件，以及清理和更新缓存。此外，还提供了针对RedHat8和9的特定替换方法。</p>
 </blockquote>
-<p>试验分别为Red Hat7/8/9
-- Red Hat Enterprise Linux Server release 7.9 (Maipo)
-- Red Hat Enterprise Linux Server release 7.8 (Maipo)
-- Red Hat Enterprise Linux release 8.8 (Ootpa)
-- Red Hat Enterprise Linux release 9.2 (Plow) </p>
+<p>试验分别为Red Hat7/8/9</p>
+<p>Red Hat Enterprise Linux Server release 7.9 (Maipo)
+Red Hat Enterprise Linux Server release 7.8 (Maipo)
+Red Hat Enterprise Linux release 8.8 (Ootpa)
+Red Hat Enterprise Linux release 9.2 (Plow) </p>
 <h3 id="red-hat-enterprise-linux-7">Red Hat Enterprise Linux 7 更换方式：<a class="headerlink" href="#red-hat-enterprise-linux-7" title="Permanent link">&para;</a></h3>
-<blockquote>
 <p>This system is not registered with an entitlement server. You can use subscription-manager to register.</p>
-</blockquote>
-<h6 id="1-yum">1  先删除系统自带的 yum 软件包<a class="headerlink" href="#1-yum" title="Permanent link">&para;</a></h6>
+<h3 id="1-yum">1  先删除系统自带的 yum 软件包<a class="headerlink" href="#1-yum" title="Permanent link">&para;</a></h3>
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1">[root@redHatEnterpriseLinux7 ~]# rpm -qa |grep yum
 </span><span id="__span-0-2">[root@redHatEnterpriseLinux7 ~]# rpm -qa |grep yum | xargs rpm -e --nodeps
 </span></code></pre></div></td></tr></table></div>
 <h3 id="2-centos7-5">2 下载 centos7 相关的5个软件包<a class="headerlink" href="#2-centos7-5" title="Permanent link">&para;</a></h3>
-<blockquote>
 <p>寻找并下载阿里镜像站下以下文件，有可能后面的版本号不同 下面包下载如果有问题的话，再自行搜索下载</p>
-</blockquote>
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -1052,9 +1048,7 @@
 </span><span id="__span-1-5">https://mirrors.aliyun.com/centos/7/os/x86_64/Packages/python-urlgrabber-3.10-10.el7.noarch.rpm 
 </span></code></pre></div></td></tr></table></div>
 <h3 id="3">3 下载完成后，通过以下命令将文件安装到系统中<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
-<blockquote>
 <p>因为安装会有依赖的问题，所以加上--force参数强制安装</p>
-</blockquote>
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1">rpm -ivh python-urlgrabber-3.10-10.el7.noarch.rpm yum-utils-1.1.31-54.el7_8.noarch.rpm yum-plugin-fastestmirror-1.1.31-54.el7_8.noarch.rpm yum-metadata-parser-1.1.4-10.el7.x86_64.rpm yum-3.4.3-168.el7.centos.noarch.rpm --force --nodeps
 </span></code></pre></div></td></tr></table></div>
 <h3 id="4-etcyumreposd">4 下载阿里镜像到/etc/yum.repos.d/目录下<a class="headerlink" href="#4-etcyumreposd" title="Permanent link">&para;</a></h3>
