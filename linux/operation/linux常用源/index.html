@@ -1471,10 +1471,26 @@
 <div class="admonition note">
 <p class="admonition-title">阿里源</p>
 <p>先备份<code>/etc/yum.repo.d/*.repo</code> 文件, 然后在<code>/etc/yum.repo.d/*.repo</code>添加以下条目</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">centos xxxx</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">redhat9.+</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-markdown highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Markdown</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1">XXXX
+<div class="language-markdown highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Markdown</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1">[aliyun-app]
+</span><span id="__span-5-2">name=aliyun-appsteam
+</span><span id="__span-5-3">baseurl=https://mirrors.aliyun.com/centos-stream/9-stream/AppStream/x86_64/os/
+</span><span id="__span-5-4">gpgcheck=0
+</span><span id="__span-5-5">
+</span><span id="__span-5-6">[aliyun-base]
+</span><span id="__span-5-7">name=aliyun-baseos
+</span><span id="__span-5-8">baseurl=https://mirrors.aliyun.com/centos-stream/9-stream/BaseOS/x86_64/os/
+</span><span id="__span-5-9">gpgcheck=0
 </span></code></pre></div></td></tr></table></div>
 </div>
 </div>
