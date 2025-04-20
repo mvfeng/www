@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2afb09e1.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -1152,6 +1152,8 @@
       
         
       
+        
+      
     
     
     
@@ -1201,6 +1203,29 @@
   
   <span class="md-ellipsis">
     docker或dockerhub的国内镜像源或加速列表4月15日更新长期维护
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docker/nvidia-container-toolkit%E5%9B%BD%E5%86%85%E6%BA%90/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    nvidia-container-toolkit 国内镜像源安装
     
   </span>
   
@@ -1471,26 +1496,52 @@
 <div class="admonition note">
 <p class="admonition-title">阿里源</p>
 <p>先备份<code>/etc/yum.repo.d/*.repo</code> 文件, 然后在<code>/etc/yum.repo.d/*.repo</code>添加以下条目</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">redhat9.+</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">redhat9系列</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-markdown highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Markdown</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1">[aliyun-app]
-</span><span id="__span-5-2">name=aliyun-appsteam
+<div class="language-markdown highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Markdown</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1">[AppStream]
+</span><span id="__span-5-2">name=AppStream
 </span><span id="__span-5-3">baseurl=https://mirrors.aliyun.com/centos-stream/9-stream/AppStream/x86_64/os/
-</span><span id="__span-5-4">gpgcheck=0
-</span><span id="__span-5-5">
-</span><span id="__span-5-6">[aliyun-base]
-</span><span id="__span-5-7">name=aliyun-baseos
-</span><span id="__span-5-8">baseurl=https://mirrors.aliyun.com/centos-stream/9-stream/BaseOS/x86_64/os/
-</span><span id="__span-5-9">gpgcheck=0
+</span><span id="__span-5-4">enabled=1
+</span><span id="__span-5-5">gpgcheck=0
+</span><span id="__span-5-6">
+</span><span id="__span-5-7">[BaseOS]
+</span><span id="__span-5-8">name=BaseOS
+</span><span id="__span-5-9">baseurl=https://mirrors.aliyun.com/centos-stream/9-stream/BaseOS/x86_64/os/
+</span><span id="__span-5-10">enabled=1
+</span><span id="__span-5-11">gpgcheck=0
+</span><span id="__span-5-12">
+</span><span id="__span-5-13">[extras]
+</span><span id="__span-5-14">name=extras
+</span><span id="__span-5-15">baseurl=https://mirrors.aliyun.com/centos-stream/9-stream/HighAvailability/x86_64/os/
+</span><span id="__span-5-16">enabled=1
+</span><span id="__span-5-17">gpgcheck=0
+</span><span id="__span-5-18">
+</span><span id="__span-5-19">[epel]
+</span><span id="__span-5-20">name=epel
+</span><span id="__span-5-21">baseurl=https://mirrors.aliyun.com/epel/9/Everything/x86_64/
+</span><span id="__span-5-22">enabled=1
 </span></code></pre></div></td></tr></table></div>
 </div>
 </div>
