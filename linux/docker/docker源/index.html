@@ -1376,15 +1376,14 @@
 <span class="normal">17</span>
 <span class="normal">18</span>
 <span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1">sudo<span class="w"> </span>tee<span class="w"> </span>/etc/docker/daemon.json<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1">sudo<span class="w"> </span>tee<span class="w"> </span>/etc/docker/daemon.json<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
 </span><span id="__span-2-2"><span class="s"> {</span>
 </span><span id="__span-2-3"><span class="s">  &quot;registry-mirrors&quot;: [</span>
-</span><span id="__span-2-4"><span class="s">    &quot;https://docker.hpcloud.cloud&quot;,</span>
-</span><span id="__span-2-5"><span class="s">    &quot;https://docker.m.daocloud.io&quot;,</span>
-</span><span id="__span-2-6"><span class="s">    &quot;https://docker.unsee.tech&quot;,</span>
-</span><span id="__span-2-7"><span class="s">    &quot;https://docker.1panel.live&quot;,</span>
-</span><span id="__span-2-8"><span class="s">    &quot;http://mirrors.ustc.edu.cn&quot;,</span>
+</span><span id="__span-2-4"><span class="s">    &quot;https://docker.m.daocloud.io&quot;,</span>
+</span><span id="__span-2-5"><span class="s">    &quot;https://docker.hpcloud.cloud&quot;,</span>
+</span><span id="__span-2-6"><span class="s">    &quot;http://mirrors.ustc.edu.cn&quot;,</span>
+</span><span id="__span-2-7"><span class="s">    &quot;https://docker.unsee.tech&quot;,</span>
+</span><span id="__span-2-8"><span class="s">    &quot;https://docker.1panel.live&quot;,</span>
 </span><span id="__span-2-9"><span class="s">    &quot;https://docker.chenby.cn&quot;,</span>
 </span><span id="__span-2-10"><span class="s">    &quot;http://mirror.azure.cn&quot;,</span>
 </span><span id="__span-2-11"><span class="s">    &quot;https://dockerpull.org&quot;,</span>
@@ -1392,12 +1391,11 @@
 </span><span id="__span-2-13"><span class="s">    &quot;https://hub.rat.dev&quot;,</span>
 </span><span id="__span-2-14"><span class="s">    &quot;https://proxy.1panel.live&quot;,</span>
 </span><span id="__span-2-15"><span class="s">    &quot;https://docker.1panel.top&quot;,</span>
-</span><span id="__span-2-16"><span class="s">    &quot;https://docker.m.daocloud.io&quot;,</span>
-</span><span id="__span-2-17"><span class="s">    &quot;https://docker.1ms.run&quot;,</span>
-</span><span id="__span-2-18"><span class="s">    &quot;https://docker.ketches.cn&quot;</span>
-</span><span id="__span-2-19"><span class="s">  ]</span>
-</span><span id="__span-2-20"><span class="s">}</span>
-</span><span id="__span-2-21"><span class="s">EOF</span>
+</span><span id="__span-2-16"><span class="s">    &quot;https://docker.1ms.run&quot;,</span>
+</span><span id="__span-2-17"><span class="s">    &quot;https://docker.ketches.cn&quot;</span>
+</span><span id="__span-2-18"><span class="s">  ]</span>
+</span><span id="__span-2-19"><span class="s">}</span>
+</span><span id="__span-2-20"><span class="s">EOF</span>
 </span></code></pre></div></td></tr></table></div>
 <h4 id="docker">重启docker服务<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h4>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1">systemctl<span class="w"> </span>daemon-reload<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>docker
